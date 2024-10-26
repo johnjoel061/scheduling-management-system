@@ -9,6 +9,7 @@ const app = express();
 const authRouter = require('./routes/authRoute');
 const userRouter = require('./routes/userRoute');
 const facilityRouter = require('./routes/facilityRoute');
+const schedulingRequestRouter = require('./routes/schedulingRequestRoute');
 
 
 //===== ENVIRONMENT VARIABLES ====//
@@ -39,6 +40,7 @@ connectDB(MONGODB_CONNECTION_URL, DB_OPTIONS);
 app.use("/api/auth", authRouter);
 app.use("/api/admin", userRouter);
 app.use("/api/location", facilityRouter);
+app.use("/api/book", schedulingRequestRouter);
 
 
 //===== GLOBAL ERROR HANDLER ====//

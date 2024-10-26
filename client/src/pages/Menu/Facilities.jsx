@@ -132,7 +132,7 @@ const Facilities = () => {
             <Button
               type="primary"
               htmlType="submit"
-              loading={addFacilityLoading} // Show loading state
+              loading={addFacilityLoading} 
               style={{
                 width: "100%",
                 fontWeight: "bold",

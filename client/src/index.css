@@ -1,43 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
 
-html, 
+html,
 body,
 #root,
-.app, 
+.app,
 .content {
   height: 100%;
   width: 100%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
-.app{
+.app {
   display: flex;
   position: relative;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 10px;
 }
 
 /*======Track=======*/
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
   background: #e0e0e0;
 }
 
 /*======Handle======*/
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background: #888;
 }
 
 /* Handle on Hover*/
-::-webkit-scrollbar-track:hover{
+::-webkit-scrollbar-track:hover {
   background: #555;
 }
 
@@ -50,18 +50,186 @@ body,
   z-index: 1000;
 }
 
-body{
+body {
   background: #555;
 }
 
 /* Change border color on hover */
 .custom-input:hover .ant-input {
-  border-color: #0A5E4F !important; 
+  border-color: #0a5e4f !important;
 }
 
 /* Change border color when focused */
 .custom-input:focus-within .ant-input {
-  border-color: #0A5E4F !important; 
+  border-color: #0a5e4f !important;
 }
 
+/* Homepage.css */
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("./assets/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  font-family: Arial, sans-serif;
+  position: relative;
+  overflow: hidden; /* Hides any overflow content */
+  width: 100vw; /* Ensures the container spans the entire width of the viewport */
+}
 
+.logo-container {
+  position: absolute; /* Use absolute positioning for the logo */
+  top: 10px; /* Positioning from the top */
+  left: 20px; /* Positioning from the left */
+}
+
+.logo {
+  width: 100px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50%;
+}
+
+.header {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.login-button {
+  background-color: #ffc107;
+  color: #1d1b1b;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-button:hover {
+  background-color: #e0a800;
+}
+
+.content {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+}
+
+.title-container {
+  width: 100vh;
+  height: 100vh;
+  position: absolute;
+  top: 150px;
+  left: 50px;
+}
+
+.title {
+  font-size: 6rem;
+  font-weight: 800;
+}
+
+.subtitle {
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+.description {
+  width: 600px;
+  font-weight: 200;
+  margin-top: 20px;
+}
+
+.schedule-button {
+  background-color: #ffc107;
+  position: absolute;
+  color: #1d1b1b;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 20px;
+  left: 20px;
+}
+
+.event-button {
+  background-color: #cbbf9b;
+  position: absolute;
+  color: #1d1b1b;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 20px;
+  left: 230px;
+}
+
+.schedule-button, .event-button {
+  display: flex; /* Use flexbox to align items */
+  align-items: center; /* Center items vertically */
+  background-color: #e1d4ab; /* Background color for schedule button */
+  color: #1d1b1b; /* Text color */
+  padding: 10px 20px; /* Padding */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Bold text */
+  margin-top: 20px; /* Spacing between buttons */
+  cursor: pointer; /* Pointer cursor on hover */
+  gap: 8px; /* Space between icon and text */
+}
+
+.schedule-button, .schedule-button {
+  display: flex; /* Use flexbox to align items */
+  align-items: center; /* Center items vertically */
+  background-color: #ffc107; /* Background color for schedule button */
+  color: #1d1b1b; /* Text color */
+  padding: 10px 20px; /* Padding */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Bold text */
+  margin-top: 20px; /* Spacing between buttons */
+  cursor: pointer; /* Pointer cursor on hover */
+  gap: 8px; /* Space between icon and text */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .title-container {
+    width: 100vh;
+    height: 100vh;
+    position: absolute;
+    top: 150px;
+    left: 50px;
+  }
+
+  .title {
+    font-size: 3rem; /* Reduce title size for mobile */
+  }
+
+  .subtitle {
+    font-size: 1.5rem; /* Reduce subtitle size for mobile */
+  }
+
+  .description {
+    width: 400px;
+    font-weight: 200;
+    margin-top: 20px;
+  }
+
+  .schedule-button {
+    margin-top: 40px; /* Maintain spacing */
+    left: 0;
+  }
+
+  .event-button {
+    margin-top: 40px; /* Maintain spacing */
+    left: 210px;
+  }
+}

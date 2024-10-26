@@ -22,6 +22,10 @@ const SchedulingRequestSchema = new mongoose.Schema(
       required: true,
     },
 
+    dateOfRequesting: {
+      type: { type: Date, default: Date.now },
+    },
+
     startDate: {
       type: String,
       required: true,
@@ -41,6 +45,34 @@ const SchedulingRequestSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+
+    firstName: {
+      type: String,
+      required: true,
+    },
+
+    lastName: {
+      type: String,
+      required: true,
+    },
+
+    occupation: {
+      type: String,
+      required: true,
+    },
+
+    email: {
+      type: String,
+      required: true,
+    },
+
+    status: {
+      type: String,
+      enum: ["pending", "approved", "disapproved"],
+      default: "pending",
+    },
+
+    disapprovedReason: {type: String},
   },
 
   { versionKey: false, timestamps: true }
