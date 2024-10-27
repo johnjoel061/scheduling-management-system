@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Alert, Button, Card, Form, Input, Spin, Typography } from "antd";
+import { Button, Card, Form, Input, Spin, Typography } from "antd";
+import { LoadingOutlined } from "@ant-design/icons";
+
 import useRequestPasswordReset from "../../hooks/AuthHook/useRequestPasswordReset";
 import useResetPassword from "../../hooks/AuthHook/usePasswordReset";
 // images
@@ -159,7 +161,7 @@ const ForgotPassword = () => {
             <Form.Item
               label="Email"
               name="email"
-              style={{fontWeight: "bold"}}
+              style={{ fontWeight: "bold" }}
               rules={[
                 {
                   required: true,
@@ -186,7 +188,7 @@ const ForgotPassword = () => {
                 <Form.Item
                   label="Verification Code"
                   name="verificationCode"
-                  style={{fontWeight: "bold"}}
+                  style={{ fontWeight: "bold" }}
                   rules={[
                     {
                       required: true,
@@ -206,7 +208,7 @@ const ForgotPassword = () => {
                 <Form.Item
                   label="New Password"
                   name="newPassword"
-                  style={{fontWeight: "bold"}}
+                  style={{ fontWeight: "bold" }}
                   rules={[
                     {
                       required: true,
@@ -236,10 +238,10 @@ const ForgotPassword = () => {
                 htmlType="submit"
                 size="large"
                 disabled={resetPasswordLoading || requestPasswordLoading}
-                style={{fontWeight: "bold", background: "#0A5E4F"}}
+                style={{ fontWeight: "bold", background: "#0A5E4F" }}
               >
                 {resetPasswordLoading || requestPasswordLoading ? (
-                  <Spin />
+                  <Spin indicator={<LoadingOutlined spin />} />
                 ) : isVerificationCodeSent ? (
                   "Reset Password"
                 ) : (
@@ -248,7 +250,9 @@ const ForgotPassword = () => {
               </Button>
             </Form.Item>
             <div style={loginLinkStyles} onClick={handleLoginAccountClick}>
-              <small style={{fontWeight: "bold", color: "#0A5E4F"}}>{linkLoading ? <Spin /> : "Login?"}</small>
+              <small style={{ fontWeight: "bold", color: "#0A5E4F" }}>
+                {linkLoading ? <Spin indicator={<LoadingOutlined spin />} /> : "Login?"}
+              </small>
             </div>
           </Form>
         </div>

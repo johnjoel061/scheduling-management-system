@@ -3,7 +3,9 @@ const router = express.Router();
 const schedulingRequestController = require("../controllers/schedulingRequestController");
 
 router.post("/schedule-request/add", schedulingRequestController.addSchedulingRequest);
-// router.get("/schedule-request/all", schedulingRequestController.getAllFacilities);
-// router.delete("/schedule-request/:id", schedulingRequestController.deleteFacility);
+router.put("/schedule-request/update", schedulingRequestController.handleSchedulingRequest);
+router.get("/schedule-request/all", schedulingRequestController.getAllSchedulingRequests);
+router.get("/schedule-request/get/:id", schedulingRequestController.getSchedulingRequestById);
+router.delete("/schedule-request/delete/:id", schedulingRequestController.deleteSchedulingRequestById);
 
 module.exports = router;

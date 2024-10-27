@@ -12,6 +12,10 @@ const SchedulingRequestSchema = new mongoose.Schema(
       required: true,
     },
 
+    venue: {
+      type: String,
+    },
+
     participant: {
       type: String,
       required: true,
@@ -22,8 +26,8 @@ const SchedulingRequestSchema = new mongoose.Schema(
       required: true,
     },
 
-    dateOfRequesting: {
-      type: { type: Date, default: Date.now },
+    dateRequested: {
+      type: Date, default: Date.now,
     },
 
     startDate: {

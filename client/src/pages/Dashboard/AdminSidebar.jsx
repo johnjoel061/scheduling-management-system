@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
 import DomainAddIcon from "@mui/icons-material/DomainAdd";
-import ListAltOutlinedIcon from "@mui/icons-material/ListAltOutlined";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 import EventBusyIcon from "@mui/icons-material/EventBusy";
@@ -138,13 +137,6 @@ const AdminSidebar = () => {
               title="Facilities"
               to="/facilities"
               icon={<DomainAddIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Scheduling List"
-              to="/scheduling-list"
-              icon={<ListAltOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />

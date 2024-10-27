@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Alert, Button, Card, Form, Input, Spin, Typography } from "antd";
+import { LoadingOutlined } from "@ant-design/icons";
+
 import useLogin from "../../hooks/AuthHook/useLogin";
 // images
 import Logo from "../../assets/logo.jpg";
@@ -62,7 +64,7 @@ const Login = () => {
     alignItems: "center",
     minHeight: "100vh",
     padding: "20px", // Optional: To add some padding around the card
-    background: "#0A5E4F"
+    background: "#0A5E4F",
   };
 
   const cardStyles = {
@@ -115,6 +117,11 @@ const Login = () => {
   return (
     <>
       <div style={wrapperStyles}>
+        <div className="header">
+          <Link to="/home-page" className="login-button">
+            Go to Homepage
+          </Link>
+        </div>
         <Card style={cardStyles}>
           <Link to="/login" style={logoContainerStyles}>
             <span className="logo">
@@ -134,7 +141,7 @@ const Login = () => {
             <Form layout="vertical" onFinish={handleLogin} autoComplete="off">
               <Form.Item
                 label="Email"
-                style={{fontWeight: "bold"}}
+                style={{ fontWeight: "bold" }}
                 name="email"
                 rules={[
                   {
@@ -148,12 +155,16 @@ const Login = () => {
                 ]}
                 className="custom-input"
               >
-                <Input className="ant-input" size="large" placeholder="Enter your email" />
+                <Input
+                  className="ant-input"
+                  size="large"
+                  placeholder="Enter your email"
+                />
               </Form.Item>
 
               <Form.Item
                 label="Password"
-                style={{fontWeight: "bold"}}
+                style={{ fontWeight: "bold" }}
                 name="password"
                 rules={[
                   {
@@ -185,9 +196,13 @@ const Login = () => {
                   type={`${loading ? "" : "primary"}`}
                   htmlType="submit"
                   size="large"
-                  style={{fontWeight: "bold", background: "#0A5E4F"}}
+                  style={{ fontWeight: "bold", background: "#0A5E4F" }}
                 >
-                  {loading ? <Spin /> : "Log In"}
+                  {loading ? (
+                    <Spin indicator={<LoadingOutlined spin />} />
+                  ) : (
+                    "Log In"
+                  )}
                 </Button>
               </Form.Item>
 
@@ -195,8 +210,12 @@ const Login = () => {
                 style={forgotPasswordLinkStyles}
                 onClick={handleForgotPasswordClick}
               >
-                <small style={{fontWeight: "bold", color: "#0A5E4F"}}>
-                  {linkLoading ? <Spin /> : "Change password?"}
+                <small style={{ fontWeight: "bold", color: "#0A5E4F" }}>
+                  {linkLoading ? (
+                    <Spin indicator={<LoadingOutlined spin />} />
+                  ) : (
+                    "Change password?"
+                  )}
                 </small>
               </div>
             </Form>

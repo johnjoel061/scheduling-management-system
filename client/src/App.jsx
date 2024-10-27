@@ -12,7 +12,6 @@ import DashboardAdmin from './pages/Dashboard/DashboardAdmin';
 import AdminSidebar from './pages/Dashboard/AdminSidebar';
 import User from './pages/Menu/User';
 import Facilities from './pages/Menu/Facilities';
-import SchedulingList from './pages/Menu/SchedulingList';
 import PendingSchedule from './pages/Menu/PendingSchedule';
 import ApprovedSchedule from './pages/Menu/ApprovedSchedule';
 import DisapprovedSchedule from './pages/Menu/DisapprovedSchedule';
@@ -45,7 +44,6 @@ const App = () => {
             <Route path="/admin-dashboard" element={isAuthenticated && userData.role === 'ADMIN' ? <DashboardAdmin /> : <Navigate to="/" />} />
             <Route path="/user" element={isAuthenticated && userData.role === 'ADMIN' ? <User /> : <Navigate to="/" />} />
             <Route path="/facilities" element={isAuthenticated && userData.role === 'ADMIN' ? <Facilities /> : <Navigate to="/" />} />
-            <Route path="/scheduling-list" element={isAuthenticated && userData.role === 'ADMIN' ? <SchedulingList /> : <Navigate to="/" />} />
             <Route path="/pending-schedule" element={isAuthenticated && userData.role === 'ADMIN' ? <PendingSchedule /> : <Navigate to="/" />} />
             <Route path="/approved-schedule" element={isAuthenticated && userData.role === 'ADMIN' ? <ApprovedSchedule /> : <Navigate to="/" />} />
             <Route path="/disapproved-schedule" element={isAuthenticated && userData.role === 'ADMIN' ? <DisapprovedSchedule /> : <Navigate to="/" />} />
