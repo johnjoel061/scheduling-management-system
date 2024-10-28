@@ -6,6 +6,7 @@ import BookmarkAddOutlinedIcon from "@mui/icons-material/BookmarkAddOutlined";
 import EventAvailableOutlinedIcon from "@mui/icons-material/EventAvailableOutlined";
 import useAddSchedulingRequest from "../../hooks/SchedulingRequestHook/useAddSchedulingRequest";
 import useGetAllFacility from "../../hooks/FacilityHook/useGetAllFacility";
+import { motion } from "framer-motion";
 
 const Homepage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -49,16 +50,35 @@ const Homepage = () => {
       </div>
       <div className="content">
         <div className="title-container">
-          <h1 className="title">DEBESMSCAT</h1>
-          <h3 className="subtitle">Scheduling and Reservation</h3>
-          <div className="description">
+          <motion.h1
+            className="title"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            DEBESMSCAT
+          </motion.h1>
+          <motion.h3
+            className="subtitle"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            Scheduling and Reservation
+          </motion.h3>
+          <motion.div
+            className="description"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
             <p>
               Discover the convenience of hassle-free scheduling with our
-              system! Whether you're planning a group event, our
-              platform makes it simple to book, manage, and confirm your
-              schedules in just a few clicks.
+              system! Whether you're planning a group event, our platform makes
+              it simple to book, manage, and confirm your schedules in just a
+              few clicks.
             </p>
-          </div>
+          </motion.div>
 
           <button
             className="schedule-button"
@@ -110,12 +130,12 @@ const Homepage = () => {
             rules={[{ required: true, message: "Please select a venue" }]}
           >
             <select
-              onClick={refetchFacilities} 
+              onClick={refetchFacilities}
               style={{
                 width: "100%",
-                padding: "8px", 
-                borderRadius: "4px", 
-                border: "1px solid #d9d9d9", 
+                padding: "8px",
+                borderRadius: "4px",
+                border: "1px solid #d9d9d9",
               }}
             >
               <option value="" disabled selected>
