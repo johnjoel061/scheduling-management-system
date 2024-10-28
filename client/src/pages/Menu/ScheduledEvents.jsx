@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 import { Typography, Card } from "antd";
 import { Box } from "@mui/material";
 import moment from "moment";
+import {
+  CalendarOutlined,
+  ClockCircleOutlined,
+  TeamOutlined,
+  UserOutlined,
+} from "@ant-design/icons";
 import useFetchSchedulingRequest from "../../hooks/SchedulingRequestHook/useFetchSchedulingRequest";
 import backgroundImage from "../../assets/background.webp";
 
@@ -70,7 +76,6 @@ const ScheduledEvents = () => {
     transition: "max-height 0.3s ease",
     maxHeight: isExpanded ? "800px" : "300px", // Expanded and collapsed heights
     marginBottom: "20px",
-
   });
 
   const homeButton = {
@@ -88,6 +93,8 @@ const ScheduledEvents = () => {
     position: "relative",
   };
 
+  const iconStyle = { marginRight: "8px", color: "#555" };
+
   return (
     <div style={wrapperStyles}>
       <div className="header" style={{ zIndex: 2 }}>
@@ -102,7 +109,10 @@ const ScheduledEvents = () => {
       </div>
       <div style={overlayStyles}></div>
       <div style={contentStyles}>
-        <Typography.Title level={3} style={{ color: "#ffffff", textAlign: "center" }}>
+        <Typography.Title
+          level={3}
+          style={{ color: "#ffffff", textAlign: "center" }}
+        >
           SCHEDULED EVENTS
         </Typography.Title>
         <Box sx={containerStyles}>
@@ -110,12 +120,24 @@ const ScheduledEvents = () => {
             const isExpanded = expandedDescriptions[event._id];
             return (
               <Card key={event._id} style={cardStyles(isExpanded)}>
-                <Typography.Title level={5}>{event.eventTitle}</Typography.Title>
+                <Typography.Title
+                  level={5}
+                  style={{
+                    fontWeight: "bold",
+                    letterSpacing: "1px",
+                    color: "green",
+                  }}
+                >
+                  {event.eventTitle}
+                </Typography.Title>
+
                 <Typography.Paragraph>
                   <strong>Description:</strong>{" "}
                   {isExpanded
                     ? event.eventDescription || "No description available."
-                    : `${(event.eventDescription || "No description available.").substring(0, 100)}...`}{" "}
+                    : `${(
+                        event.eventDescription || "No description available."
+                      ).substring(0, 100)}...`}{" "}
                   <span
                     onClick={() => toggleDescription(event._id)}
                     style={{ color: "blue", cursor: "pointer" }}
@@ -124,19 +146,22 @@ const ScheduledEvents = () => {
                   </span>
                 </Typography.Paragraph>
                 <Typography.Paragraph>
+                  <CalendarOutlined style={{...iconStyle, color: "#F2BD32"}}  />
                   <strong>Date:</strong>{" "}
                   {moment(event.start).format("MMMM D, YYYY")} -{" "}
                   {moment(event.end).format("MMMM D, YYYY")}
                 </Typography.Paragraph>
                 <Typography.Paragraph>
-                  <strong>Time:</strong>{" "}
-                  {moment(event.start).format("h:mm A")} -{" "}
-                  {moment(event.end).format("h:mm A")}
+                  <ClockCircleOutlined style={{...iconStyle, color: "#15B392"}} />
+                  <strong>Time:</strong> {moment(event.start).format("h:mm A")}{" "}
+                  - {moment(event.end).format("h:mm A")}
                 </Typography.Paragraph>
                 <Typography.Paragraph>
+                  <UserOutlined style={{...iconStyle, color: "#FF4818"}} />
                   <strong>Participants:</strong> {event.participant}
                 </Typography.Paragraph>
                 <Typography.Paragraph>
+                  <TeamOutlined style={{...iconStyle, color: "#1A8AF6"}} />
                   <strong>No. of Participants:</strong>{" "}
                   {event.numberOfParticipant}
                 </Typography.Paragraph>

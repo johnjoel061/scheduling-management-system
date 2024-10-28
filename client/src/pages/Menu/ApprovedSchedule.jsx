@@ -1,11 +1,11 @@
-import React from "react";
 import { useState } from "react";
-import { Button, Modal, Typography, Table, Popconfirm, message, Input } from "antd";
+import { Button, Modal, Typography  } from "antd";
 import { Box } from "@mui/material";
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import moment from 'moment';
 import useFetchSchedulingRequest from "../../hooks/SchedulingRequestHook/useFetchSchedulingRequest";
+import useDeleteSchedulingRequest from "../../hooks/SchedulingRequestHook/useDeleteSchedulingRequest";
 
 const localizer = momentLocalizer(moment); // Set up localizer
 
