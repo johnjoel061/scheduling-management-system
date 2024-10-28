@@ -2,7 +2,7 @@ const User = require("../models/userModel");
 const createError = require("../utils/appError");
 const crypto = require("crypto");
 require("dotenv").config(); // Load environment variables
-const bcrypt = require("bcrypt");
+const bcrypt = require('bcryptjs');
 const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
 const upload = require("../utils/profileMulterConfig");
