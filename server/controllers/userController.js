@@ -3,7 +3,7 @@ const User = require("../models/userModel");
 const createError = require("../utils/appError");
 const path = require('path');
 const fs = require('fs');
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 // Get All Users
 exports.getAllUsers = async (req, res, next) => {
