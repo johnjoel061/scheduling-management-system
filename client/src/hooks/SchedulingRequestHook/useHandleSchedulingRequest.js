@@ -12,7 +12,7 @@ const useHandleSchedulingRequest = () => {
     setSuccessMessage(null);
 
     try {
-      const response = await axios.put("http://localhost:3000/api/book/schedule-request/update", {
+      const response = await axios.put("https://debesmscat-scheduling-and-reservation.onrender.com/api/book/schedule-request/update", {
         requestId,
         action,
         disapprovedReason,

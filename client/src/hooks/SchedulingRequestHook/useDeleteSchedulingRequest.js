@@ -12,7 +12,7 @@ const useDeleteSchedulingRequest = () => {
     setLoading(true); // Set loading state to true
     setError(null); // Reset any previous error
     try {
-      await axios.delete(`http://localhost:3000/api/book/schedule-request/delete/${id}`, {
+      await axios.delete(`https://debesmscat-scheduling-and-reservation.onrender.com/api/book/schedule-request/delete/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }

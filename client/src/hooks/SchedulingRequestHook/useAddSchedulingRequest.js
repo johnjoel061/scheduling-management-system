@@ -12,7 +12,7 @@ const useAddSchedulingRequest = () => {
 
     try {
       // Send POST request
-      const response = await axios.post('http://localhost:3000/api/book/schedule-request/add', values, {
+      const response = await axios.post('https://debesmscat-scheduling-and-reservation.onrender.com/api/book/schedule-request/add', values, {
         headers: {
           'Content-Type': 'application/json',
         },

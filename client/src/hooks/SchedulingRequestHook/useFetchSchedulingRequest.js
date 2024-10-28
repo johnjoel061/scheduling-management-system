@@ -9,7 +9,7 @@ const useFetchSchedulingRequest = () => {
   const fetchSchedulingRequests = useCallback(async () => {
     setLoading(true); // Ensure loading state is true when refetching
     try {
-      const response = await axios.get('http://localhost:3000/api/book/schedule-request/all', {
+      const response = await axios.get('https://debesmscat-scheduling-and-reservation.onrender.com/api/book/schedule-request/all', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }

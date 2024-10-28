@@ -14,7 +14,7 @@ const useSignup = () => {
     setLoading(true);
     try {
       // Send POST request to register the user
-      const response = await axios.post('http://localhost:3000/api/auth/signup', values, {
+      const response = await axios.post('https://debesmscat-scheduling-and-reservation.onrender.com/api/auth/signup', values, {
         headers: {
           'Content-Type': 'application/json',
         },

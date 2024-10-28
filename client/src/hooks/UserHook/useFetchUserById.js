@@ -9,7 +9,7 @@ const useFetchUserById = (id) => {
   const fetchUserById = useCallback(async () => {
     setLoading(true); // Ensure loading state is true when refetching
     try {
-      const response = await axios.get(`http://localhost:3000/api/employee/users/${id}`, {
+      const response = await axios.get(`https://debesmscat-scheduling-and-reservation.onrender.com/api/employee/users/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }

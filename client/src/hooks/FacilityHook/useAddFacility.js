@@ -15,7 +15,7 @@ const useAddFacility = () => {
     try {
       // Send POST request to add a new facility
       const response = await axios.post(
-        'http://localhost:3000/api/location/facility/add',
+        'https://debesmscat-scheduling-and-reservation.onrender.com/api/location/facility/add',
         { facilityName },
         {
           headers: {
