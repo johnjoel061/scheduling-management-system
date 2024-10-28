@@ -34,7 +34,7 @@ const App = () => {
           <AdminSidebar className="sidebar" isCollapsed={isSidebarCollapsed} setIsCollapsed={setIsSidebarCollapsed} />
         )}
 
-        <main style={{ flexGrow: 1, overflowX: 'hidden' }}>
+        <main style={{ flexGrow: 1, overflowX: 'hidden', backgroundColor: '#FAFAFA' }}>
           {isAuthenticated && <Topbar setIsSidebar={setIsSidebarCollapsed} className="topbar" />}
           <Routes>
             {/* Redirect logged-in users from the login page */}

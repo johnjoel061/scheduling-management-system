@@ -3,7 +3,6 @@ import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { Box, Typography, Avatar, Divider } from "@mui/material";
 import { useAuth } from "../../contexts/AuthContext";
 import { Link } from "react-router-dom";
-
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
 import DomainAddIcon from "@mui/icons-material/DomainAdd";
